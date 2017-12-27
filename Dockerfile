@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
   supervisor \
   smbclient \
   cron \
+  && docker-php-ext-install smbclient \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/log/supervisord /var/run/supervisord && \ 
